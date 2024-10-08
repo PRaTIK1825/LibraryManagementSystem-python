@@ -731,7 +731,7 @@ class LibraryManagementSystem:
         self.library_table.bind("<ButtonRelease-1>",self.get_cursor)
 
     def adda_data(self):
-        conn=mysql.connector.connect(host="localhost",username="root",password="SASANEPRATIK@203",database="world")
+        conn=mysql.connector.connect(host="localhost",username="root",password="",database="world")
         my_cursor=conn.cursor()
         my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
                                                                                                                 self.member_var.get(),
@@ -764,7 +764,7 @@ class LibraryManagementSystem:
         messagebox.showinfo("Success","Member Has been inserted successfully")
 
     def update(self):
-        conn=mysql.connector.connect(host="localhost",username="root",password="SASANEPRATIK@203",database="world")
+        conn=mysql.connector.connect(host="localhost",username="root",password="",database="world")
         my_cursor=conn.cursor()
         my_cursor.execute("update library set Member=%s,ID=%s,FirstName=%s,LastName=%s,Address1=%s,Address2=%s,Postid=%s,Mobile=%s,Bookid=%s,booktitle=%s,Author=%s,Dateborrowed=%s,datedue=%s,Daysonbook=%s,Latereturnfine=%s,dateoverdue=%s,Finalprice=%s where PRN_NO=%s",(
                                                                                                                 self.member_var.get(),
@@ -809,7 +809,7 @@ class LibraryManagementSystem:
         
 
     def fatch_data(self):
-        conn=mysql.connector.connect(host="localhost",username="root",password="SASANEPRATIK@203",database="world")
+        conn=mysql.connector.connect(host="localhost",username="root",password="",database="world")
         my_cursor=conn.cursor()
         my_cursor.execute("select * from  library")
         rows=my_cursor.fetchall()
@@ -897,7 +897,7 @@ class LibraryManagementSystem:
         if self.prn_var.get()=="" or self.id_var.get==()=="":
             messagebox,messagebox.showerror("Error","First Select the Member")
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="SASANEPRATIK@203",database="world")
+            conn=mysql.connector.connect(host="localhost",username="root",password="",database="world")
         my_cursor=conn.cursor()
         query="delete from library where PRN_No=%s"
         value=(self.prn_var.get(),)
